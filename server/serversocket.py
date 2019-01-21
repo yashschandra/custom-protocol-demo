@@ -3,9 +3,9 @@ from handler import Handler
 
 class ServerSocket():
 
-    def __init__(self, max_connection, port):
+    def __init__(self, max_connection, host, port):
         self.server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.server_socket.bind((socket.gethostname(), port))
+        self.server_socket.bind((host, port))
         self.server_socket.listen(max_connection)
         self.handler = Handler() 
 
